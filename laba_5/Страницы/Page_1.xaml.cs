@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace laba_5
+namespace laba_5.Страницы
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Page_1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Page_1 : Page
     {
-        public MainWindow()
+        public Page_1()
         {
             InitializeComponent();
         }

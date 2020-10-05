@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:laba_5"
         mc:Ignorable="d"
-        Title="MainWindow"   Height="600" Width="800">
+        Title="MainWindow"   Height="600" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Grid Background="#F0EDED">
         <Grid.ColumnDefinitions>
@@ -16,6 +16,7 @@
             <RowDefinition Height="68*"/>
             <RowDefinition Height="532*"/>
         </Grid.RowDefinitions>
+        <Grid/>
         <Grid
 Background="#2C4380"
 Grid.ColumnSpan="2">
@@ -28,7 +29,7 @@ Orientation="Horizontal"
 HorizontalAlignment="Left"
 Margin="20 0 0 0">
                 <Image
-Source="Resource/c-sharp-white.png"
+Source="картинки/c-sharp-white.png"
 Width="40"/>
                 <TextBlock
 Text="MY FIRST COMPANY"
@@ -84,7 +85,7 @@ Background="#2C4380">
                 <RowDefinition Height="300*"/>
             </Grid.RowDefinitions>
             <Button
-FontSize="12"
+FontSize="12" x:Name="Client_LIst_1" Click="Client_LIst"
 FontFamily="Microsoft YaHei Light"
 Foreground="#F0EDED"
 Background="#2C4380"
@@ -94,7 +95,7 @@ HorizontalContentAlignment="Left" >
                 </Button.BorderBrush>
                 <StackPanel
 Orientation="Horizontal">
-                    <Image Source="/laba_5;component/картинки/client list.png" Width="20" Margin="30 0 20 0" />
+                    <Image Source="картинки/client list.png" Width="20" Margin="30 0 20 0" />
                     <TextBlock Text="CLIENT LIST" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
@@ -110,7 +111,7 @@ HorizontalContentAlignment="Left" >
                 </Button.BorderBrush>
                 <StackPanel
 Orientation="Horizontal">
-                    <Image Source="/laba_5;component/картинки/service list.png" Width="20" Margin="30 0 20 0" />
+                    <Image Source="картинки/service list.png" Width="20" Margin="30 0 20 0" />
                     <TextBlock Text="SERVICE LIST" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
@@ -126,7 +127,7 @@ HorizontalContentAlignment="Left" >
                 </Button.BorderBrush>
                 <StackPanel
 Orientation="Horizontal">
-                    <Image Source="/laba_5;component/картинки/book a service.png" Width="20" Margin="30 0 20 0" />
+                    <Image Source="картинки/book a service.png" Width="20" Margin="30 0 20 0" />
                     <TextBlock Text="BOOK A SERVICE" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
@@ -142,7 +143,7 @@ HorizontalContentAlignment="Left">
                 </Button.BorderBrush>
                 <StackPanel
 Orientation="Horizontal">
-                    <Image Source="/laba_5;component/картинки/help.png" Width="20" Margin="30 0 20 0" />
+                    <Image Source="картинки/help.png" Width="20" Margin="30 0 20 0" />
                     <TextBlock Text="HELP" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
@@ -164,7 +165,7 @@ Margin="0 0 0 30"
                     </Style>
                 </Button.Resources>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Resource/back.png" Width="15" Margin="0 0 5 0" />
+                    <Image Source="картинки/back.png" Width="15" Margin="0 0 5 0" />
                     <TextBlock Text="BACK"/>
                 </StackPanel>
             </Button>
@@ -172,7 +173,7 @@ Margin="0 0 0 30"
         <Grid Grid.Row="1"
 Grid.Column="1"
 Margin="20 10 20 20">
-            <Frame x:Name="FRMain">
+            <Frame x:Name="FraMain" Background="#FFEAE5E5" NavigationUIVisibility="Hidden" >
             </Frame>
         </Grid>
     </Grid>

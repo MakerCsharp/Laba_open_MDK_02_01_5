@@ -12,17 +12,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using laba_5.Страницы;
 
-namespace laba_5.Страницы
+
+namespace laba_5
 {
     /// <summary>
-    /// Логика взаимодействия для Page1.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class MainWindow : Window
     {
-        public Page1()
+        public MainWindow()
         {
             InitializeComponent();
+            FraMain.Navigate(new Page_1());
+          
+
+        }
+
+        private void Client_LIst(object sender, RoutedEventArgs e)
+        {
+            FraMain.Navigate(new Page2());
+
         }
     }
 }

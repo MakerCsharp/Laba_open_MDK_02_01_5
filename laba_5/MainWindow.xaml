@@ -158,6 +158,8 @@ BorderBrush="#F0EDED"
 Height="30"
 Width="110"
 Margin="0 0 0 30"
+                
+                x:Name="Back" Click="Navigate_back"
 >
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">

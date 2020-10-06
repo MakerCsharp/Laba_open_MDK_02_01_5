@@ -35,5 +35,15 @@ namespace laba_5
             FraMain.Navigate(new Page2());
 
         }
+
+        private void Navigate_back(object sender, RoutedEventArgs e)
+        {
+            if (FraMain.CanGoBack)
+            {
+
+                FraMain.GoBack();
+
+            }
+        }
     }
 }

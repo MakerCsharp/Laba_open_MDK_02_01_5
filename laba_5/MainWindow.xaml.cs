@@ -45,5 +45,10 @@ namespace laba_5
 
             }
         }
+
+        private void Server_list(object sender, RoutedEventArgs e)
+        {
+            FraMain.Navigate(new Page_3());
+        }
     }
 }

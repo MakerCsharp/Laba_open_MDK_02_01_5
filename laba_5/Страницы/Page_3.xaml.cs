@@ -17,14 +17,14 @@ using static laba_5.Appdata.Class1;
 namespace laba_5.Страницы
 {
     /// <summary>
-    /// Логика взаимодействия для Page2.xaml
+    /// Логика взаимодействия для Page_3.xaml
     /// </summary>
-    public partial class Page2 : Page
+    public partial class Page_3 : Page
     {
-        public Page2()
+        public Page_3()
         {
             InitializeComponent();
-            listview_form.ItemsSource = context.User.ToList();
+            List123.ItemsSource = context.User.ToList();
         }
     }
 }

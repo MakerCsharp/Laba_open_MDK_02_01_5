@@ -105,7 +105,8 @@ FontSize="12"
 FontFamily="Microsoft YaHei Light"
 Foreground="#F0EDED"
 Background="#2C4380"
-HorizontalContentAlignment="Left" >
+HorizontalContentAlignment="Left" 
+                Click="Server_list">
                 <Button.BorderBrush>
                     <SolidColorBrush Color="#FFF0EDED" Opacity="0.5"/>
                 </Button.BorderBrush>

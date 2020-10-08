@@ -20,7 +20,7 @@ namespace laba_5
         public string MiddleName { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public int IdRole { get; set; }
+        public int idRole { get; set; }
     
         public virtual Role Role { get; set; }
     }

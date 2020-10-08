@@ -10,7 +10,7 @@
             <PropertyRef Name="idRole" />
           </Key>
           <Property Name="idRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Role" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="NameRole" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -32,7 +32,7 @@
           <Property Name="MiddleName" Type="nvarchar" MaxLength="255" />
           <Property Name="Login" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="idRole" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_User_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
@@ -42,7 +42,7 @@
               <PropertyRef Name="idRole" />
             </Principal>
             <Dependent Role="User">
-              <PropertyRef Name="IdRole" />
+              <PropertyRef Name="idRole" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -65,7 +65,7 @@
             <PropertyRef Name="idRole" />
           </Key>
           <Property Name="idRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Role1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameRole" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -88,7 +88,7 @@
           <Property Name="MiddleName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="idRole" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
         </EntityType>
         <Association Name="FK_User_Role">
@@ -99,7 +99,7 @@
               <PropertyRef Name="idRole" />
             </Principal>
             <Dependent Role="User">
-              <PropertyRef Name="IdRole" />
+              <PropertyRef Name="idRole" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -122,7 +122,7 @@
             <EntityTypeMapping TypeName="ForEducationModel.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="idRole" ColumnName="idRole" />
-                <ScalarProperty Name="Role1" ColumnName="Role" />
+                <ScalarProperty Name="NameRole" ColumnName="NameRole" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -146,7 +146,7 @@
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="idRole" ColumnName="idRole" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

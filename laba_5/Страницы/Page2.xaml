@@ -45,18 +45,18 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock  Grid.Row="3" Grid.Column="1" Text="Last Name" FontSize="8" FontFamily="Microsoft YaHei Light" />
-            <TextBox Grid.Row="4" Grid.Column="1" />
+            <TextBox TextChanged="Textbox_Last_Name_TextChanged" x:Name="Textbox_Last_Name" Grid.Row="4" Grid.Column="1" />
 
             <TextBlock  Grid.Row="3" Grid.Column="3" Text="First Name" FontSize="8" FontFamily="Microsoft YaHei Light" />
-            <TextBox Grid.Row="4" Grid.Column="3" />
+            <TextBox  TextChanged="Textbox_First_Name_TextChanged" x:Name="Textbox_First_Name" Grid.Row="4" Grid.Column="3" />
 
             <!---->
 
-            <TextBlock  Grid.Row="6" Grid.Column="1" Text="Role" FontSize="8" FontFamily="Microsoft YaHei Light" />
-            <ComboBox Grid.Row="7" Grid.Column="1" Style="{DynamicResource ComboBoxStyle1}" Template="{DynamicResource ComboBoxEditableTemplate}" />
+            <TextBlock  x:Name="Textbox_Last_name"   Grid.Row="6" Grid.Column="1" Text="Role" FontSize="8" FontFamily="Microsoft YaHei Light" />
+            <ComboBox  x:Name="Combobox_Role" SelectionChanged="Combobox_Role_SelectionChange" Grid.Row="7" Grid.Column="1" Style="{DynamicResource ComboBoxStyle1}" Template="{DynamicResource ComboBoxEditableTemplate}" />
 
             <TextBlock  Grid.Row="6" Grid.Column="3" Text="Login" FontSize="8" FontFamily="Microsoft YaHei Light" />
-            <TextBox Grid.Row="7" Grid.Column="3" />
+            <TextBox TextChanged="Textbox_Login_TextChanged"  x:Name="Textbox_Login" Grid.Row="7" Grid.Column="3" />
 
 
             <Grid Grid.Row="1" Grid.Column="5">
@@ -110,7 +110,7 @@
             <Button  Grid.Row="1" Grid.Column="1" Background="#14285E" Style="{DynamicResource ButtonStyle1}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/add.png"/>
-                    <TextBlock Text=" ADD NEW" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text=" ADD NEW" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
 
                 </StackPanel>
 
@@ -118,14 +118,14 @@
             <Button  Grid.Row="1" Grid.Column="3" Background="#14285E" Style="{DynamicResource ButtonStyle1}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/edit.png" Height="17" Width="14"/>
-                    <TextBlock Text=" EDIT" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text=" EDIT" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
 
                 </StackPanel>
             </Button>
             <Button  Grid.Row="1" Grid.Column="5" Background="#14285E">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/delete.png" Height="17" Width="14"/>
-                    <TextBlock Text=" DELET" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text=" DELET" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
 
                 </StackPanel>
 
@@ -145,7 +145,7 @@
 
                         <GridViewColumn Header="Логин" Width="150" DisplayMemberBinding="{Binding Login}"/>
 
-                        <GridViewColumn Header="Роль" Width="150" DisplayMemberBinding="{Binding Role.Role1}"/>
+                        <GridViewColumn Header="Роль" Width="150" DisplayMemberBinding="{Binding Role.NameRole}"/>
 
 
 

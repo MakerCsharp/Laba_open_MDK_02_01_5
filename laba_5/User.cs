@@ -15,9 +15,9 @@ namespace laba_5
     public partial class User
     {
         public int idUser { get; set; }
-        public string LastName { get; set; }
         public string FirstName { get; set; }
-        public string MiddleName { get; set; }
+        public string SecondName { get; set; }
+        public string LastName { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public int idRole { get; set; }

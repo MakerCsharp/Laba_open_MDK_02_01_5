@@ -103,7 +103,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ForEducationEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Role" EntityType="Self.Role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="User" EntityType="Self.User" />
@@ -117,7 +117,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ForEducationModelContainer" CdmEntityContainer="ForEducationEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ForEducationModelContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="ForEducationModel.Role">
               <MappingFragment StoreEntitySet="Role">

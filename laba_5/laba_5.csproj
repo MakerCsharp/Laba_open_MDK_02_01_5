@@ -169,6 +169,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="База данных\C__SQL_MSSQL13.SQLEXPRESS_MSSQL_DATA_FOREDUCATION.MDF.bak" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

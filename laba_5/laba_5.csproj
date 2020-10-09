@@ -217,6 +217,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="Моя_бд_\картинка бд\Снимок экрана 2020-10-09 124122.png" />
     <Content Include="Моя_бд_\Скрипт базы данных\Скрипт на создание бд.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

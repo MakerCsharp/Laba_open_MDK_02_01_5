@@ -169,8 +169,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="База данных\C__SQL_MSSQL13.SQLEXPRESS_MSSQL_DATA_FOREDUCATION.MDF.bak" />
-    <None Include="База данных\Файл базы данных в EXCEL\База дынных  в excel.xlsx" />
+    <None Include="Моя_бд_\C__SQL_MSSQL13.SQLEXPRESS_MSSQL_DATA_FOREDUCATION.MDF.bak" />
+    <None Include="Моя_бд_\Файл базы данных в EXCEL\База дынных  в excel.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -217,6 +217,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Моя_бд_\Скрипт базы данных\Скрипт на создание бд.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

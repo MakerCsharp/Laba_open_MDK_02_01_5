@@ -8,7 +8,7 @@ namespace laba_5.Appdata
 {
     class Class1
     {
-        public static ForEducationEntities context = new ForEducationEntities();
+      public static ForEducationEntities context = new ForEducationEntities();
 
     }
 }

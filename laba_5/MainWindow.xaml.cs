@@ -25,14 +25,14 @@ namespace laba_5
         public MainWindow()
         {
             InitializeComponent();
-            FraMain.Navigate(new Page_1());
+            FraMain.Navigate(new Page_1());//страница приветстви 
           
 
         }
 
         private void Client_LIst(object sender, RoutedEventArgs e)
         {
-            FraMain.Navigate(new Page2());
+            FraMain.Navigate(new Page2());///Client-page
 
         }
 
@@ -48,7 +48,7 @@ namespace laba_5
 
         private void Server_list(object sender, RoutedEventArgs e)
         {
-            FraMain.Navigate(new Page_3());
+            FraMain.Navigate(new Page_3());//search_list
         }
     }
 }

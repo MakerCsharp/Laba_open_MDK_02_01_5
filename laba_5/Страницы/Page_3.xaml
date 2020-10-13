@@ -15,10 +15,15 @@
             <RowDefinition Height="12*"/>
             <RowDefinition Height="67*"/>
         </Grid.RowDefinitions>
-        <ListView HorizontalAlignment="Left" Height="378" VerticalAlignment="Top" Width="550" Grid.Row="1" x:Name="List123" >
+        <ListView  HorizontalAlignment="Left"  VerticalAlignment="Top"  Grid.Row="1" x:Name="List123" Height="376" Width="539" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding LastName}"/>
+
+                    <GridViewColumn Header="Услуги" Width="400" DisplayMemberBinding="{Binding Services}"/>
+
+                    <GridViewColumn Header="Цена" Width="200" DisplayMemberBinding="{Binding Price}"/>
+
+                    <!--<GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding LastName}"/>
 
                     <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding FirstName}"/>
 
@@ -26,24 +31,39 @@
 
                     <GridViewColumn Header="Логин" Width="100" DisplayMemberBinding="{Binding Login}"/>
 
-                    <GridViewColumn Header="Роль" Width="100" DisplayMemberBinding="{Binding Role.NameRole}"/>
+                    <GridViewColumn Header="Роль" Width="100" DisplayMemberBinding="{Binding Role.NameRole}"/>-->
                 </GridView>
             </ListView.View>
         </ListView>
 
         <Grid Grid.Row="0" Background="White">
             <Grid.RowDefinitions>
+                <RowDefinition Height="17*"/>
                 <RowDefinition Height="10*"/>
-                <RowDefinition Height="26*"/>
-                <RowDefinition Height="11*"/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="438*"/>
-                <ColumnDefinition Width="85*"/>
-                <ColumnDefinition Width="16*"/>
+                <ColumnDefinition Width="21*"/>
+                <ColumnDefinition Width="151*"/>
+                <ColumnDefinition Width="137*"/>
+                <ColumnDefinition Width="138*"/>
+                <ColumnDefinition Width="87*"/>
+                <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="1" Grid.Column="1" Content="Serves List"/>
+            <Button Grid.Column="4" Content="SERVICE LIST" Margin="10,2,0,5" Grid.RowSpan="2"/>
+            <TextBox x:Name ="TextBox_NAme_services_services" HorizontalAlignment="Left" 
+                     Height="23"  Grid.Row="1" TextWrapping="Wrap"  
+                     TextChanged="Name_srvices"
+                     VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.RowSpan="3"/>
+            <TextBox x:Name="TextBox_MInPrice"
+                     TextChanged="MInprice" 
+                     HorizontalAlignment="Left" Height="23"  Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="95" Grid.Column="2" Grid.RowSpan="3"/>
+            <TextBox x:Name="MaxPrice" Grid.Column="3" HorizontalAlignment="Left" Height="23" Grid.Row="1" Grid.RowSpan="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,1,0,0" TextWrapping="Wrap" Text="NameService" VerticalAlignment="Top"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,2,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Min Price Service" VerticalAlignment="Top"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="0,1,0,0" TextWrapping="Wrap" Text="Max Price Service" VerticalAlignment="Top"/>
 
         </Grid>
         <Grid  Grid.Row="3" Background="White">

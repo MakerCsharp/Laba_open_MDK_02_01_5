@@ -12,17 +12,10 @@ namespace laba_5
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Service
     {
-        public int idUser { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public string MidleName { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public int idRole { get; set; }
-        public byte[] Image { get; set; }
-    
-        public virtual Role Role { get; set; }
+        public int diServices { get; set; }
+        public string Services { get; set; }
+        public decimal Price { get; set; }
     }
 }

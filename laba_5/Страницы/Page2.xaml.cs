@@ -29,7 +29,7 @@ namespace laba_5.Страницы
 
             List<Role> roles = context.Role.ToList();
             
-            roles.Insert(0, new Role() { Role1 = "Все роли" });
+            roles.Insert(0, new Role() {  NameRole= "Все роли" });
 
             Combobox_Role.ItemsSource = roles;
             Combobox_Role.DisplayMemberPath = "Role1";
@@ -41,7 +41,7 @@ namespace laba_5.Страницы
         public void Filter()
         {
             var list = context.User.Where(i => i.LastName.Contains(Textbox_Last_name.Text))
-                                   .Where(i => i.SecondName.Contains(Textbox_First_Name.Text) || i.FirstName.Contains(Textbox_First_Name.Text))
+                                   .Where(i => i.MidleName.Contains(Textbox_First_Name.Text) || i.FirstName.Contains(Textbox_First_Name.Text))
                                    .Where(i => i.Login.Contains(Textbox_Login.Text)).ToList();
 
             listview_form.ItemsSource = list;

@@ -24,7 +24,29 @@ namespace laba_5.Страницы
         public Page_3()
         {
             InitializeComponent();
-            List123.ItemsSource = context.User.ToList();
+            List123.ItemsSource = context.Service.ToList();
+        }
+        
+
+        private void Name_srvices(object sender, TextChangedEventArgs e)
+        {
+            var list = context.Service.ToList();
+            List123.ItemsSource = list.Where(i => i.Services.ToUpper().Contains(TextBox_NAme_services_services.Text.ToUpper()));
+        }
+
+        private void MInprice(object sender, TextChangedEventArgs e)
+        {
+            //////var list = context.Service.ToList();
+
+            //////List123.ItemsSource = list.Where(i => i.Price.ToString().Contains(TextBox_MInPrice.Text.ToUpper()));
+
+            
+            var list = context.Service.ToList();
+            List123.ItemsSource = list.Where(i=>i.Price.ToString().Contains(TextBox_MInPrice.Text.ToUpper().Min(i=>i.ToString())));
+            
+
+            
+
         }
     }
 }

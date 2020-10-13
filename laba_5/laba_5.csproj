@@ -81,6 +81,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Appdata\Class1.cs" />
+    <Compile Include="Get_Max_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,11 +102,23 @@
     <Compile Include="Role.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Окна\WindowClientApp.xaml.cs">
+      <DependentUpon>WindowClientApp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Страницы\Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
@@ -126,6 +141,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Окна\WindowClientApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Страницы\Page2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,7 +192,7 @@
     <None Include="Моя_бд_\Файл базы данных в EXCEL\База дынных  в excel.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Страницы\App.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="картинки\add.png" />
@@ -207,6 +226,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Моя_бд_\картинка бд\Снимок экрана 2020-10-09 124122.png" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -217,7 +237,6 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Resource Include="Моя_бд_\картинка бд\Снимок экрана 2020-10-09 124122.png" />
     <Content Include="Моя_бд_\Скрипт базы данных\Скрипт на создание бд.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

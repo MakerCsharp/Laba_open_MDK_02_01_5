@@ -120,6 +120,9 @@
     <Compile Include="Окна\WindowClientApp.xaml.cs">
       <DependentUpon>WindowClientApp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Окна\WindowEditClient.xaml.cs">
+      <DependentUpon>WindowEditClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Страницы\Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Окна\WindowClientApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Окна\WindowEditClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,6 +187,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
@@ -188,8 +196,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Моя_бд_\C__SQL_MSSQL13.SQLEXPRESS_MSSQL_DATA_FOREDUCATION.MDF.bak" />
-    <None Include="Моя_бд_\Файл базы данных в EXCEL\База дынных  в excel.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Страницы\App.config" />
@@ -226,7 +232,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Моя_бд_\картинка бд\Снимок экрана 2020-10-09 124122.png" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -237,7 +242,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="Моя_бд_\Скрипт базы данных\Скрипт на создание бд.sql" />
+    <Content Include="Моя_бд\Skript_Fedinskiy_3isp_11-7.sql" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

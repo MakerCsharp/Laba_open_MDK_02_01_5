@@ -1,11 +1,11 @@
-﻿<Window x:Class="laba_5.Окна.WindowClientApp"
+﻿<Window x:Class="laba_5.Окна.WindowEditClient"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:laba_5.Окна"
         mc:Ignorable="d"
-        Title="WindowClientApp" Height="475" Width="534">
+         Title="WindowClientApp" Height="475" Width="534">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -19,7 +19,7 @@
         <TextBlock
 Grid.ColumnSpan="2"
 Background="#D1D6E3"
-Text="ADD NEW CLIENT"
+Text="EDIT CLIENT"
 FontFamily="Microsoft YaHei Light"
 Foreground="#14285E"
 HorizontalAlignment="Center"
@@ -27,6 +27,7 @@ VerticalAlignment="Center"
 FontSize="18"
 Padding="5"/>
         <Button
+            x:Name="Edit_button"
 Grid.Row="2"
 FontSize="12"
 FontFamily="Microsoft YaHei Light"
@@ -34,18 +35,19 @@ Foreground="#F0EDED"
 Background="#2C4380"
 BorderBrush="#F0EDED"
 Height="30"
-Width="130" Click="Button_Click_1">
+Width="130" Click="Button_Click_Edit">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="2" />
                 </Style>
             </Button.Resources>
             <StackPanel Orientation="Horizontal">
-                <Image Source="/laba_5;component/картинки/add.png" Width="15" Margin="0 0 5 0" />
-                <TextBlock Text="ADD NEW"/>
+                <Image Source="/laba_5;component/картинки/edit.png" Width="15" Margin="0 0 5 0" />
+                <TextBlock Text="EDIT CLIIENT"/>
             </StackPanel>
         </Button>
         <Button
+            x:Name="Button_cancel"
 Grid.Row="2"
 Grid.Column="1"
 FontSize="12"
@@ -54,7 +56,7 @@ Foreground="#F0EDED"
 Background="#2C4380"
 BorderBrush="#F0EDED"
 Height="30"
-Width="130" Click="Button_Click"
+Width="130" Click="Button_Cancel"
 >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -97,7 +99,7 @@ Foreground="Gray"
 FontFamily="Microsoft YaHei Light"
 Padding="15 0 0 5"/>
                 <ComboBox Margin="15 0 15 0"
-                          x:Name="CBrole"
+                          x:Name="CBrole" IsEditable="True"
 Height="25"
 VerticalContentAlignment="Center"
 Background="White"

@@ -10,5 +10,7 @@ namespace laba_5.Appdata
     {
       public static Entities context = new Entities();
 
+        public static int idClient;//для сохранения id выбранного пользоватедля редактирования клиента 
+
     }
 }

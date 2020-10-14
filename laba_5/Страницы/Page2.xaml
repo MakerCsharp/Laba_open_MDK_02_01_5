@@ -53,7 +53,7 @@
             <!---->
 
             <TextBlock  x:Name="Textbox_Last_name"   Grid.Row="6" Grid.Column="1" Text="Role" FontSize="8" FontFamily="Microsoft YaHei Light" />
-            <ComboBox  x:Name="Combobox_Role" SelectionChanged="Combobox_Role_SelectionChange" Grid.Row="7" Grid.Column="1" Style="{DynamicResource ComboBoxStyle1}" Template="{DynamicResource ComboBoxEditableTemplate}" />
+            <ComboBox  x:Name="Combobox_Role" SelectionChanged="Combobox_Role_SelectionChange" Grid.Row="7" Grid.Column="1" Style="{DynamicResource ComboBoxStyle1}" IsEditable="True" Template="{DynamicResource ComboBoxEditableTemplate}" />
 
             <TextBlock  Grid.Row="6" Grid.Column="3" Text="Login" FontSize="8" FontFamily="Microsoft YaHei Light" />
             <TextBox TextChanged="Textbox_Login_TextChanged"  x:Name="Textbox_Login" Grid.Row="7" Grid.Column="3" />
@@ -107,7 +107,7 @@
 
 
             </Grid>
-            <Button  Grid.Row="1" Grid.Column="1" Background="#14285E" Style="{DynamicResource ButtonStyle1}">
+            <Button  Grid.Row="1" Grid.Column="1" Background="#14285E" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Left" Width="127" Click="Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/add.png"/>
                     <TextBlock Text=" ADD NEW" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
@@ -115,11 +115,11 @@
                 </StackPanel>
 
             </Button>
-            <Button  Grid.Row="1" Grid.Column="3" Background="#14285E" Style="{DynamicResource ButtonStyle1}">
+            <Button  Grid.Row="1" Grid.Column="3" Background="#14285E" Style="{DynamicResource ButtonStyle1}" x:Name="Button_edit_page2" Click="Button_Edit_click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/edit.png" Height="17" Width="14"/>
                     <TextBlock Text=" EDIT" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-
+                    
                 </StackPanel>
             </Button>
             <Button  Grid.Row="1" Grid.Column="5" Background="#14285E">
@@ -141,7 +141,7 @@
                         
                         <GridViewColumn Header="Имя" Width="150" DisplayMemberBinding="{Binding FirstName}"/>
 
-                        <GridViewColumn Header="Отчество" Width="150" DisplayMemberBinding="{Binding MiddleName}"/>
+                        <GridViewColumn Header="Отчество" Width="150" DisplayMemberBinding="{Binding MidleName}"/>
 
                         <GridViewColumn Header="Логин" Width="150" DisplayMemberBinding="{Binding Login}"/>
 

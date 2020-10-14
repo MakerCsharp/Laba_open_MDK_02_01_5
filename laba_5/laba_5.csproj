@@ -198,6 +198,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Моя_бд\База дынных  в excel.xlsx" />
     <None Include="Страницы\App.config" />
   </ItemGroup>
   <ItemGroup>

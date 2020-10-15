@@ -54,7 +54,7 @@ namespace laba_5.Страницы
             //1 часть работы 
             var list = context.User.ToList();
             //Ниже код с ошибкой
-             listview_form.ItemsSource = list.Where(i => i.MidleName.Contains(Textbox_First_Name.Text) || i.FirstName.Contains(Textbox_First_Name.Text));
+             listview_form.ItemsSource = list.Where(i => i.FirstName.Contains(Textbox_First_Name.Text) );
             //Перевод в верхний регистр 
 
         }
@@ -123,6 +123,11 @@ namespace laba_5.Страницы
             {
                 MessageBox.Show("Выберите клиента для редактирования !","Уведомление",MessageBoxButton.OK,MessageBoxImage.Warning);
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

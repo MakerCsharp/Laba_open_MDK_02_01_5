@@ -123,6 +123,9 @@
     <Compile Include="Окна\WindowEditClient.xaml.cs">
       <DependentUpon>WindowEditClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Окна\WindowHelp.xaml.cs">
+      <DependentUpon>WindowHelp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Страницы\Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Окна\WindowEditClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Окна\WindowHelp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -243,6 +250,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="картинки\star_filled_96px.png" />
     <Content Include="Моя_бд\Skript_Fedinskiy_3isp_11-7.sql" />
   </ItemGroup>
   <ItemGroup />

@@ -28,9 +28,9 @@ namespace laba_5
         }
     
         public virtual DbSet<Role> Role { get; set; }
-        public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Service> Service { get; set; }
     
         public virtual ObjectResult<Get_Max_Result> Get_Max(string name, Nullable<decimal> max_price)
         {

@@ -15,15 +15,13 @@
             <RowDefinition Height="12*"/>
             <RowDefinition Height="67*"/>
         </Grid.RowDefinitions>
-        <ListView  HorizontalAlignment="Left"  VerticalAlignment="Top"  Grid.Row="1" x:Name="List123" Height="376" Width="539" >
-            <ListView.View>
-                <GridView>
+        <ListView  HorizontalAlignment="Left"  VerticalAlignment="Top"  Grid.Row="1" x:Name="List123" Height="376" Width="539"  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <!--<ListView.View>-->
+            <!--<GridView>-->
+            <!--<GridViewColumn Header="Услуги" Width="400" DisplayMemberBinding="{Binding Services}"/>
 
-                    <GridViewColumn Header="Услуги" Width="400" DisplayMemberBinding="{Binding Services}"/>
-
-                    <GridViewColumn Header="Цена" Width="200" DisplayMemberBinding="{Binding Price}"/>
-
-                    <!--<GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Цена" Width="200" DisplayMemberBinding="{Binding Price}"/>-->
+            <!--<GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding LastName}"/>
 
                     <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding FirstName}"/>
 
@@ -32,10 +30,67 @@
                     <GridViewColumn Header="Логин" Width="100" DisplayMemberBinding="{Binding Login}"/>
 
                     <GridViewColumn Header="Роль" Width="100" DisplayMemberBinding="{Binding Role.NameRole}"/>-->
-                </GridView>
-            </ListView.View>
-        </ListView>
+            <!--</GridView>-->
+            <!--</ListView.View>-->
+     
+                <!--<ListView.View>
+                    <GridView>
+                        
+                        <GridViewColumn Header="Фамилия" Width="150" DisplayMemberBinding="{Binding LastName}"/>
+                        
+                        <GridViewColumn Header="Имя" Width="150" DisplayMemberBinding="{Binding FirstName}"/>
 
+                        <GridViewColumn Header="Отчество" Width="150" DisplayMemberBinding="{Binding MidleName}"/>
+
+                        <GridViewColumn Header="Логин" Width="150" DisplayMemberBinding="{Binding Login}"/>
+
+                        <GridViewColumn Header="Роль" Width="150" DisplayMemberBinding="{Binding Role.NameRole}"/>
+
+
+
+                    </GridView>
+                </ListView.View>-->
+                
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="Auto" Height="80" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.8*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Margin="5" Stretch="Uniform" >
+                                <!--<Binding Path="Image">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>/laba_5;component/картинки/help.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>-->
+                                <Image.Source>
+                                    <Binding Path="image">
+                                        <Binding.TargetNullValue>
+                                        <ImageSource>/laba_5;component/картинки/star_filled_96px.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" >
+                                <TextBlock Text="{Binding Path= Services}" Margin="5 0 5 0" Width="Auto"/>
+                                <!---Фамилия-->
+                                <TextBlock Text="{Binding Path= Price}" Margin="5 0 5 0" Width="Auto"/>
+                                
+                                
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        
+        
+        
         <Grid Grid.Row="0" Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="17*"/>
@@ -51,7 +106,6 @@
                 <ColumnDefinition Width="87*"/>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-
             <Button Grid.Column="4" Content="SERVICE LIST" Margin="10,2,0,5" Grid.RowSpan="2"/>
             <TextBox x:Name ="TextBox_NAme_services_services" HorizontalAlignment="Left" 
                      Height="23"  Grid.Row="1" TextWrapping="Wrap"  
@@ -64,7 +118,6 @@
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,1,0,0" TextWrapping="Wrap" Text="NameService" VerticalAlignment="Top"/>
             <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,2,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Min Price Service" VerticalAlignment="Top"/>
             <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="0,1,0,0" TextWrapping="Wrap" Text="Max Price Service" VerticalAlignment="Top"/>
-
         </Grid>
         <Grid  Grid.Row="3" Background="White">
             <Grid.ColumnDefinitions>

@@ -19,6 +19,7 @@
           <Property Name="diServices" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Services" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="image" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -56,10 +57,6 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="Get_Max" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="name" Type="nvarchar" Mode="In" />
-          <Parameter Name="max_price" Type="decimal" Mode="In" />
-        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -112,14 +109,6 @@
           <Property Name="NameRole" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Model.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
-        <EntityType Name="Service">
-          <Key>
-            <PropertyRef Name="diServices" />
-          </Key>
-          <Property Name="diServices" Type="Int32" Nullable="false" />
-          <Property Name="Services" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -132,7 +121,6 @@
         </EntityType>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Role" EntityType="Self.Role" />
-          <EntitySet Name="Service" EntityType="Self.Service" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <FunctionImport Name="Get_Max" ReturnType="Collection(Model.Get_Max_Result)">
             <Parameter Name="name" Mode="In" Type="String" />
@@ -173,6 +161,7 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
+          <EntitySet Name="Service" EntityType="Model.Service" />
         </EntityContainer>
         <ComplexType Name="Get_Max_Result">
           <Property Type="String" Name="Services" Nullable="true" MaxLength="100" />
@@ -215,6 +204,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="diServices" />
+          </Key>
+          <Property Name="diServices" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Services" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -229,15 +227,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Service">
-            <EntityTypeMapping TypeName="Model.Service">
-              <MappingFragment StoreEntitySet="Service">
-                <ScalarProperty Name="diServices" ColumnName="diServices" />
-                <ScalarProperty Name="Services" ColumnName="Services" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -249,14 +238,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="Get_Max" FunctionName="Хранилище Model.Get_Max">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Model.Get_Max_Result">
-                <ScalarProperty Name="Services" ColumnName="Services" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище Model.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище Model.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище Model.sp_dropdiagram" />
@@ -292,6 +273,16 @@
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="Model.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="diServices" ColumnName="diServices" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

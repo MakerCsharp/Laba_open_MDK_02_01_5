@@ -100,41 +100,31 @@
                     <ColumnDefinition Width="24*"/>
                     <ColumnDefinition Width="41*"/>
                 </Grid.ColumnDefinitions>
-
                 <TextBlock Text="OPTIONS" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="16"  Width="54" FontFamily="Microsoft YaHei Light" Margin="0,11" />
-
                 <Image Source="/laba_5;component/картинки/option.png" Grid.Column="1"/>
-
-
             </Grid>
             <Button  Grid.Row="1" Grid.Column="1" Background="#14285E" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Left" Width="127" Click="Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/add.png"/>
                     <TextBlock Text=" ADD NEW" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-
                 </StackPanel>
-
             </Button>
             <Button  Grid.Row="1" Grid.Column="3" Background="#14285E" Style="{DynamicResource ButtonStyle1}" x:Name="Button_edit_page2" Click="Button_Edit_click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/edit.png" Height="17" Width="14"/>
                     <TextBlock Text=" EDIT" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                    
                 </StackPanel>
             </Button>
-            <Button  Grid.Row="1" Grid.Column="5" Background="#14285E">
+            <Button  Grid.Row="1" Grid.Column="5" Background="#14285E" Click="Button_Click_1">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/delete.png" Height="17" Width="14"/>
                     <TextBlock Text=" DELET" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-
                 </StackPanel>
-
             </Button>
         </Grid>
-
         <Grid Background="White" Grid.Row="4">
-            <ListView x:Name="listview_form">
-                <ListView.View>
+            <ListView x:Name="listview_form" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <!--<ListView.View>
                     <GridView>
                         
                         <GridViewColumn Header="Фамилия" Width="150" DisplayMemberBinding="{Binding LastName}"/>
@@ -150,10 +140,47 @@
 
 
                     </GridView>
-                </ListView.View>
+                </ListView.View>-->
                 
-            </ListView>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="200" Height="80" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.8*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Margin="5" Stretch="Uniform" >
+                                <!--<Binding Path="Image">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>/laba_5;component/картинки/help.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>-->
+                                <Image.Source>
+                                    <Binding Path="Image">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/laba_5;component/картинки/help.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" >
+                                <TextBlock Text="{Binding Path= lastName}" Margin="5 0 5 0"/>
+                                <!---Фамилия-->
+                                <TextBlock Text="{Binding Path= FirstName}" Margin="5 0 5 0"/>
+                                <!---Фамилия-->
+                                <TextBlock Text="{Binding Path= Login}" Margin="5 0 5 0"/>
+                                <TextBlock Text="{Binding Path= Role.NameRole}" Margin="5 0 5 0" Foreground="#2c4380"/>
 
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </Grid>
 </Page>

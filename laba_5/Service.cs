@@ -17,5 +17,6 @@ namespace laba_5
         public int diServices { get; set; }
         public string Services { get; set; }
         public decimal Price { get; set; }
+        public byte[] image { get; set; }
     }
 }

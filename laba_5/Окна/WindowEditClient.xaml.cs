@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,7 @@ namespace laba_5.Окна
     /// </summary>
     public partial class WindowEditClient : Window
     {
+        private string pathPhoto ="";
         public WindowEditClient()
         {
             InitializeComponent();
@@ -54,7 +57,7 @@ namespace laba_5.Окна
             user.Login = TBlogin.Text;
             user.Password = TBpassword.Text;
             user.idRole = context.Role.Where(i=>i.NameRole == CBrole.SelectedItem.ToString()).Select(i=>i.idRole).FirstOrDefault();
-
+            user.Image = (pathPhoto.Length>0) ? File.ReadAllBytes(pathPhoto) : null;
             context.SaveChanges();
             MessageBox.Show("данные успешно сохранены ", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
@@ -63,6 +66,13 @@ namespace laba_5.Окна
 
         private void Button_image_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            if (fileDialog.ShowDialog() == true)
+            {
+                photoUser.Source = new BitmapImage(new Uri(fileDialog.FileName));
+
+                pathPhoto = fileDialog.FileName;
+            }
 
         }
     }

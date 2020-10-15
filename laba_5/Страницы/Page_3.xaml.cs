@@ -27,7 +27,7 @@ namespace laba_5.Страницы
         public Page_3()
         {
             InitializeComponent();
-            //List123.ItemsSource = context.Service.ToList();
+            List123.ItemsSource = context.Service.ToList();
         }
         
 

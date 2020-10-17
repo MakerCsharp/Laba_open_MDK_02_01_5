@@ -205,7 +205,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Моя_бд\База дынных  в excel.xlsx" />
     <None Include="Страницы\App.config" />
   </ItemGroup>
   <ItemGroup>
@@ -250,8 +249,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Моя_бд\Fedinskiy_Nikita_3isp_11_7.sql" />
     <Resource Include="картинки\star_filled_96px.png" />
-    <Content Include="Моя_бд\Skript_Fedinskiy_3isp_11-7.sql" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

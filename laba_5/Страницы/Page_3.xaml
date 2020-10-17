@@ -58,7 +58,7 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Width="Auto" Height="80" >
+                        <Grid Width="130" Height="auto" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.8*"/>
                                 <ColumnDefinition Width="1*"/>
@@ -78,12 +78,9 @@
                                 </Image.Source>
                             </Image>
                             <StackPanel Grid.Column="1" VerticalAlignment="Center" >
-                                <TextBlock Text="{Binding Path= Services}" Margin="5 0 5 0" Width="Auto"/>
-                                <!---Фамилия-->
-                                <TextBlock Text="{Binding Path= Price}" Margin="5 0 5 0" Width="Auto"/>
-                                
-                                
-                            </StackPanel>
+                            <TextBlock Text="{Binding Path= Services}" Margin="5 0 5 0"    Width="Auto"  x:Name="text_service" TextWrapping="Wrap" FontFamily="Arial" />
+                            <TextBlock Text="{Binding Path= Price}"    Margin="5 0 5 0"    Width="Auto"  x:Name="test_price"  TextWrapping="Wrap"  />
+                        </StackPanel>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

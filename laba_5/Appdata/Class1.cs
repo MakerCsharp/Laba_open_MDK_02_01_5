@@ -12,5 +12,6 @@ namespace laba_5.Appdata
 
         public static int idClient;//для сохранения id выбранного пользоватедля редактирования клиента 
 
+       
     }
 }

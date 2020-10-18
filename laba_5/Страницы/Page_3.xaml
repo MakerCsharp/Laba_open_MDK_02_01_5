@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:laba_5.Страницы"
       mc:Ignorable="d" 
       Height="502" Width="539"  
-      Title="Page_3" Loaded="Page_Loaded">
+      Title="Page_3">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -111,7 +111,7 @@
             <TextBox x:Name="TextBox_MInPrice"
                      TextChanged="MInprice" 
                      HorizontalAlignment="Left" Height="23"  Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="95" Grid.Column="2" Grid.RowSpan="3"/>
-            <TextBox x:Name="TextBox_MaxPrice" Grid.Column="3" HorizontalAlignment="Left" Height="23" Grid.Row="1" Grid.RowSpan="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+            <TextBox x:Name="TextBox_MaxPrice" Grid.Column="3" HorizontalAlignment="Left" Height="23" Grid.Row="1" Grid.RowSpan="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" TextChanged="TextBox_MaxPrice_TextChanged"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,1,0,0" TextWrapping="Wrap" Text="NameService" VerticalAlignment="Top"/>
             <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,2,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Min Price Service" VerticalAlignment="Top"/>
             <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="0,1,0,0" TextWrapping="Wrap" Text="Max Price Service" VerticalAlignment="Top"/>

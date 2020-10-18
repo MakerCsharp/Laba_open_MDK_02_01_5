@@ -14,7 +14,7 @@ namespace laba_5
     
     public partial class Service
     {
-        public int diServices { get; set; }
+        public int idServices { get; set; }
         public string Services { get; set; }
         public decimal Price { get; set; }
         public byte[] image { get; set; }

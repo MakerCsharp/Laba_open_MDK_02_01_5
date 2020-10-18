@@ -11,9 +11,11 @@ namespace laba_5
 {
     using System;
     
-    public partial class Get_Max_Result
+    public partial class vvod_max_min_Result
     {
+        public int idServices { get; set; }
         public string Services { get; set; }
-        public Nullable<decimal> Price { get; set; }
+        public decimal Price { get; set; }
+        public byte[] image { get; set; }
     }
 }

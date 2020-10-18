@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,19 +23,27 @@ namespace laba_5.Страницы
     /// <summary>
     /// Логика взаимодействия для Page_3.xaml
     /// </summary>
+    
     public partial class Page_3 : Page
     {
+        private decimal a = 0;
         public Page_3()
         {
             InitializeComponent();
             List123.ItemsSource = context.Service.ToList();
+
         }
-        
+
+        public void Filter()
+        {
+            
+            Filter();
+        }
 
         private void Name_srvices(object sender, TextChangedEventArgs e)
         {
-            //var list = context.Service.ToList();
-            //List123.ItemsSource = list.Where(i => i.Services.ToUpper().Contains(TextBox_NAme_services_services.Text.ToUpper()));
+            var list = context.Service.ToList();
+            List123.ItemsSource = list.Where(i => i.Services.Contains(TextBox_NAme_services_services.Text));
         }
 
         private void MInprice(object sender, TextChangedEventArgs e)
@@ -42,43 +51,48 @@ namespace laba_5.Страницы
             //////var list = context.Service.ToList();
 
             //////List123.ItemsSource = list.Where(i => i.Price.ToString().Contains(TextBox_MInPrice.Text.ToUpper()));
-
-            
             //var list = context.Service.ToList();
             //List123.ItemsSource = list.Where(i=>i.Price.ToString().Contains(TextBox_MInPrice.Text.ToUpper().Min(i=>i.ToString())));
-            
+            var list = context.Service.ToList();
+            //user.Image = (pathPhoto.Length > 0) ? File.ReadAllBytes(pathPhoto) : null;
+            try
+            {
 
-            
+                a = (Convert.ToDecimal(TextBox_MInPrice.Text));
 
+
+                List123.ItemsSource = list.Where(i => i.Price >= a).ToList();
+
+
+            }
+            catch
+            {
+                a = 0;
+                List123.ItemsSource = list;
+            }
         }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void TextBox_MaxPrice_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //TextBox_MaxPrice
-            // TextBox_MInPrice
-            //TextBox_NAme_services_services
+            var list = context.Service.ToList();
+            try
+            {
+
+                a = (Convert.ToDecimal(TextBox_MaxPrice.Text));
 
 
-
-            //    decimal num_1 = 10;
-            //string name = "Рудд";
-            //decimal num_2 = 20;
-
-            //    System.Data.SqlClient.SqlParameter param_1 = new System.Data.SqlClient.SqlParameter("@price_max", num_1);
-            //    System.Data.SqlClient.SqlParameter param_2 = new System.Data.SqlClient.SqlParameter("@price_min", num_2);
-            //      System.Data.SqlClient.SqlParameter param_3 = new System.Data.SqlClient.SqlParameter("Name", name);
-            //var list = context.Service.ToList();
-            //var phones = db.Database.SqlQuery<>("GetPhonesByCompany @name", param);
-
-            //SqlCommand cmd = new SqlCommand("vvod_max_min");
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //DataTable dt = new DataTable();
-            //dt.Load(cmd.ExecuteReader());
-            //List123.DataContext = dt;
+                List123.ItemsSource = list.Where(i => i.Price <= a).ToList();
 
 
-
-
+            }
+            catch
+            {
+                a = 0;
+                List123.ItemsSource = list;
+            }
+            //List123.ItemsSource = from i in list
+            //                      where (i.Price < Convert.ToInt32(TextBox_MaxPrice.Text))
+            //                      select i.ToString().ToList(); 
         }
+
     }
 }

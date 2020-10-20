@@ -122,7 +122,7 @@ FontSize="12"
 FontFamily="Microsoft YaHei Light"
 Foreground="#F0EDED"
 Background="#2C4380"
-HorizontalContentAlignment="Left" >
+HorizontalContentAlignment="Left" Click="Button_Click" >
                 <Button.BorderBrush>
                     <SolidColorBrush Color="#FFF0EDED" Opacity="0.5"/>
                 </Button.BorderBrush>

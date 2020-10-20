@@ -103,7 +103,7 @@
                 <ColumnDefinition Width="87*"/>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="4" Content="SERVICE LIST" Margin="10,2,0,5" Grid.RowSpan="2"/>
+            <Button Grid.Column="4" Content="SERVICE LIST" Margin="10,2,0,5" Grid.RowSpan="2" Background="#FF898484"/>
             <TextBox x:Name ="TextBox_NAme_services_services" HorizontalAlignment="Left" 
                      Height="23"  Grid.Row="1" TextWrapping="Wrap"  
                      TextChanged="Name_srvices"
@@ -150,7 +150,7 @@
                 </StackPanel>
             </Button>
 
-            <Button Grid.Row="3" Grid.Column="6" Background="#2C4380">
+            <Button Grid.Row="3" Grid.Column="6" Background="#2C4380" Click="BUtton_Delete">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/delete.png"/>
                     <TextBlock Text="DELET" Foreground="White"/>

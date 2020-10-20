@@ -26,8 +26,8 @@ namespace laba_5.Окна
         public WindowEditClient()
         {
             InitializeComponent();
-            CBrole.ItemsSource = context.Role.Select(i => i.NameRole).ToList();//сохранил id клиента iduser
-            var user = context.User.Where(i=>i.idUser==idClient).FirstOrDefault();//для хранения выбранного клиента в listview //переда переменной
+            CBrole.ItemsSource = context.Roles.Select(i => i.NameRole).ToList();//сохранил id клиента iduser
+            var user = context.Users.Where(i=>i.idUser==idClient).FirstOrDefault();//для хранения выбранного клиента в listview //переда переменной
             //FirstName = TbFname.Text,
             //MidleName = Middlename.Text,
             //        Login = TBlogin.Text,
@@ -40,7 +40,7 @@ namespace laba_5.Окна
             Middlename.Text = user.MidleName;//переда ча запроса в TextBox
             TBlogin.Text = user.Login;//переда ча запроса в TextBox
             TBpassword.Text = user.Password;//переда ча запроса в TextBox
-            CBrole.SelectedItem = context.Role.Where(i=>i.idRole == user.idRole ).Select(i=>i.NameRole).FirstOrDefault();////переда ча запроса в TextBox
+            CBrole.SelectedItem = context.Roles.Where(i=>i.idRole == user.idRole ).Select(i=>i.NameRole).FirstOrDefault();////переда ча запроса в TextBox
         }
 
         private void Button_Cancel(object sender, RoutedEventArgs e)
@@ -50,13 +50,13 @@ namespace laba_5.Окна
 
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
         {
-            var user = context.User.Where(i=>i.idUser == idClient).FirstOrDefault();
+            var user = context.Users.Where(i=>i.idUser == idClient).FirstOrDefault();
             user.LastName = Tblname.Text;
             user.FirstName = TbFname.Text;
             user.MidleName = Middlename.Text;
             user.Login = TBlogin.Text;
             user.Password = TBpassword.Text;
-            user.idRole = context.Role.Where(i=>i.NameRole == CBrole.SelectedItem.ToString()).Select(i=>i.idRole).FirstOrDefault();
+            user.idRole = context.Roles.Where(i=>i.NameRole == CBrole.SelectedItem.ToString()).Select(i=>i.idRole).FirstOrDefault();
             user.Image = (pathPhoto.Length>0) ? File.ReadAllBytes(pathPhoto) : null;
             context.SaveChanges();
             MessageBox.Show("данные успешно сохранены ", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);

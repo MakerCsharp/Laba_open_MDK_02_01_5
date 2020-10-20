@@ -60,7 +60,7 @@
 
 
             <Grid Grid.Row="1" Grid.Column="5">
-                <Button Content="CLIENT LIST" Background="#FF707070"/>
+                <Button Content="CLIENT LIST" Background="#FF898484"/>
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="1">
@@ -115,7 +115,7 @@
                     <TextBlock Text=" EDIT" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
                 </StackPanel>
             </Button>
-            <Button  Grid.Row="1" Grid.Column="5" Background="#14285E" Click="Button_Click_1">
+            <Button  Grid.Row="1" Grid.Column="5" Background="#14285E" Click="Button_Click_Delet">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/delete.png" Height="17" Width="14"/>
                     <TextBlock Text=" DELET" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>

@@ -10,13 +10,10 @@
 namespace laba_5
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Service
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int diServices { get; set; }
-        public string Services { get; set; }
-        public decimal Price { get; set; }
-        public byte[] image { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

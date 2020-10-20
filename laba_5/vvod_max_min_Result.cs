@@ -13,7 +13,7 @@ namespace laba_5
     
     public partial class vvod_max_min_Result
     {
-        public int idServices { get; set; }
+        public int diServices { get; set; }
         public string Services { get; set; }
         public decimal Price { get; set; }
         public byte[] image { get; set; }

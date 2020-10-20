@@ -102,6 +102,15 @@
     <Compile Include="Service.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -119,6 +128,9 @@
     </Compile>
     <Compile Include="Страницы\Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Страницы\Page4_book_service.xaml.cs">
+      <DependentUpon>Page4_book_service.xaml</DependentUpon>
     </Compile>
     <Compile Include="Страницы\Page_1.xaml.cs">
       <DependentUpon>Page_1.xaml</DependentUpon>
@@ -151,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Страницы\Page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Страницы\Page4_book_service.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,6 +256,11 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="картинки\save_64px.png" />
+    <Resource Include="картинки\cancel_64px.png" />
+    <Resource Include="картинки\expand_arrow_64px.png" />
+    <Resource Include="картинки\expand_arrow_black_64px.png" />
+    <Resource Include="картинки\double_tick_64px.png" />
     <Content Include="Моя_бд\Fedinskiy_Nikita_3isp_11_7.sql" />
     <Resource Include="картинки\star_filled_96px.png" />
   </ItemGroup>

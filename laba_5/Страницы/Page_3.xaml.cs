@@ -30,7 +30,7 @@ namespace laba_5.Страницы
         public Page_3()
         {
             InitializeComponent();
-            List123.ItemsSource = context.Service.ToList();
+            List123.ItemsSource = context.Services.ToList();
 
         }
 
@@ -42,7 +42,7 @@ namespace laba_5.Страницы
 
         private void Name_srvices(object sender, TextChangedEventArgs e)
         {
-            var list = context.Service.ToList();
+            var list = context.Services.ToList();
             List123.ItemsSource = list.Where(i => i.Services.Contains(TextBox_NAme_services_services.Text));
         }
 
@@ -53,7 +53,7 @@ namespace laba_5.Страницы
             //////List123.ItemsSource = list.Where(i => i.Price.ToString().Contains(TextBox_MInPrice.Text.ToUpper()));
             //var list = context.Service.ToList();
             //List123.ItemsSource = list.Where(i=>i.Price.ToString().Contains(TextBox_MInPrice.Text.ToUpper().Min(i=>i.ToString())));
-            var list = context.Service.ToList();
+            var list = context.Services.ToList();
             //user.Image = (pathPhoto.Length > 0) ? File.ReadAllBytes(pathPhoto) : null;
             try
             {
@@ -73,7 +73,7 @@ namespace laba_5.Страницы
         }
         private void TextBox_MaxPrice_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var list = context.Service.ToList();
+            var list = context.Services.ToList();
             try
             {
 
@@ -94,5 +94,28 @@ namespace laba_5.Страницы
             //                      select i.ToString().ToList(); 
         }
 
+        private void BUtton_Delete(object sender, RoutedEventArgs e)
+        {
+            var result_1 = MessageBox.Show("Вы действительно хотите удалить запись ?", "Удаление услуги", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result_1 == MessageBoxResult.Yes)
+            {
+                var result_2 = MessageBox.Show("Вы дейстивительно хотите сделать ?", "Удаление услуги", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result_2 == MessageBoxResult.Yes)
+                {
+                    if (List123.SelectedItem is Service service)
+                    {
+                        context.Services.Remove(context.Services.Where(i => i.diServices == service.diServices).FirstOrDefault());
+                        context.SaveChanges();
+                        MessageBox.Show("Запись успешно удалена ", "Удаление услуги", MessageBoxButton.OK, MessageBoxImage.Information);
+                        List123.ItemsSource = context.Services.ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Выберите услугу из списка !", "Удаление услуги", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+            }
+        }
     }
 }

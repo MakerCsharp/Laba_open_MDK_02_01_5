@@ -50,5 +50,10 @@ namespace laba_5
         {
             FraMain.Navigate(new Page_3());//search_list
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            FraMain.Navigate(new Page4_book_service());
+        }
     }
 }

@@ -78,7 +78,7 @@
                                 </Image.Source>
                             </Image>
                             <StackPanel Grid.Column="1" VerticalAlignment="Center" >
-                            <TextBlock Text="{Binding Path= Services}" Margin="5 0 5 0"    Width="Auto"  x:Name="text_service" TextWrapping="Wrap" FontFamily="Arial" />
+                            <TextBlock Text="{Binding Path= NServices}" Margin="5 0 5 0"    Width="Auto"  x:Name="text_service" TextWrapping="Wrap" FontFamily="Arial" />
                             <TextBlock Text="{Binding Path= Price}"    Margin="5 0 5 0"    Width="Auto"  x:Name="test_price"  TextWrapping="Wrap"  />
                         </StackPanel>
                         </Grid>
@@ -137,13 +137,13 @@
             <TextBlock Text="Options" Grid.Row="1" FontFamily="Microsoft YaHei Light" Margin="15,0,0,0" Grid.ColumnSpan="2"/>
 
             <Image Source="/laba_5;component/картинки/option.png" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="18"/>
-            <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="#2C4380">
+            <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="#2C4380" Click="Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/add.png"/>
                     <TextBlock Text="ADD NEW" Foreground="White"/>
                 </StackPanel>
             </Button>
-            <Button Grid.Row="3" Grid.Column="4" Background="#2C4380">
+            <Button Grid.Row="3" Grid.Column="4" Background="#2C4380" Click="Edit_clikc">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/laba_5;component/картинки/edit.png" />
                     <TextBlock Text="EDIT" Foreground="White"/>

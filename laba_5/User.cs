@@ -22,7 +22,9 @@ namespace laba_5
         public string Password { get; set; }
         public int idRole { get; set; }
         public byte[] Image { get; set; }
+        public Nullable<int> diServices { get; set; }
     
         public virtual Role Role { get; set; }
+        public virtual Service Service { get; set; }
     }
 }

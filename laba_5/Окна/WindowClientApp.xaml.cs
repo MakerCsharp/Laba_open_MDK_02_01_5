@@ -28,6 +28,7 @@ namespace laba_5.Окна
         {
             InitializeComponent();
             CBrole.ItemsSource = context.Roles.Select(i => i.NameRole).ToList();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,7 +38,23 @@ namespace laba_5.Окна
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if(pathPhoto!=null)
+            if (string.IsNullOrWhiteSpace(TbFname.Text)||
+                string.IsNullOrWhiteSpace(Tblname.Text)||
+                string.IsNullOrWhiteSpace(TBlogin.Text)||
+                string.IsNullOrWhiteSpace(TBpassword.Text)||
+                CBrole.SelectedItem== null)
+            {
+                MessageBox.Show("Не все поля заполнены", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            
+           if (TBpassword.Text.Length < 6)
+            {
+
+                MessageBox.Show("Пароль короткий ", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+              if(pathPhoto!=null)
             {
                 context.Users.Add(new User
                 {
@@ -49,9 +66,12 @@ namespace laba_5.Окна
                     idRole = context.Roles.Where(i => i.NameRole == CBrole.SelectedItem.ToString()).Select(i => i.idRole).FirstOrDefault(),
                     Image = File.ReadAllBytes(pathPhoto)
                 });
+                context.SaveChanges();
+                MessageBox.Show($"{Tblname.Text} {TbFname.Text} успешно добавлено !", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
 
             }
-            else
+            else 
             {
                 context.Users.Add(new User
                 {
@@ -62,11 +82,16 @@ namespace laba_5.Окна
                     Password = TBpassword.Text,
                     idRole = context.Roles.Where(i => i.NameRole == CBrole.SelectedItem.ToString()).Select(i => i.idRole).FirstOrDefault()
                    
-                });
+                }); 
+                context.SaveChanges();
+                MessageBox.Show($"{Tblname.Text} {TbFname.Text} успешно добавлено !", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+                
 
             }
-            context.SaveChanges();
-            MessageBox.Show($"{Tblname.Text} {TbFname.Text} успешно добавлено !", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+           
+            
+
         }
 
         private void Button_image_Click(object sender, RoutedEventArgs e)
@@ -77,6 +102,119 @@ namespace laba_5.Окна
                 photoUser.Source = new BitmapImage(new Uri(fileDialog.FileName));
 
                 pathPhoto = fileDialog.FileName;
+            }
+        }
+
+        private void TB_last_name_lostfocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Tblname.Text))
+            {
+                Tblname.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                Tblname.BorderBrush = Brushes.Green;
+            }
+        }
+
+        private void TB_First_name_lostfocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TbFname.Text))
+            {
+                TbFname.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                TbFname.BorderBrush = Brushes.Green;
+
+            }
+        }
+
+   
+
+        private void CB_Role_name_lostfocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(CBrole.Text))
+            {
+
+                CBrole.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                CBrole.BorderBrush = Brushes.Green;
+            }
+        }
+
+        private void TB_Login_lostfocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TBlogin.Text))
+            {
+                TBlogin.BorderBrush = Brushes.Red;
+
+            }
+            else
+            {
+                TBlogin.BorderBrush = Brushes.Green;
+            }
+        }
+
+        private void TB_Password_lostfocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TBpassword.Text))
+            {
+                TBpassword.BorderBrush = Brushes.Red;
+
+
+            }
+            else
+            {
+
+                TBpassword.BorderBrush = Brushes.Green;
+            }
+        }
+
+        private void Tb_last_name_Preview_Text_input(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = (!Char.IsLetter(e.Text, 0));
+        }
+
+        private void Tb_First_name_Preview_Text_input(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = (!Char.IsLetter(e.Text, 0));
+        }
+
+        private void Tb_Middle_name_Preview_Text_input(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = (!Char.IsLetter(e.Text, 0));
+        }
+
+        private void Tb_Role_Preview_Text_input(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = (!Char.IsLetter(e.Text,0));
+        }
+
+        private void Tb_Login_Preview_Text_input(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = (!Char.IsLetter(e.Text,0));
+        }
+
+        private void Tb_PAssword_Preview_Text_input(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = (!Char.IsLetter(e.Text,0));
+        }
+
+        private void TB_Middle_name_lostfocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Middlename.Text))
+            {
+                Middlename.BorderBrush = Brushes.Red;
+
+
+            }
+            else
+            {
+
+                Middlename.BorderBrush = Brushes.Green;
             }
         }
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:laba_5"
         mc:Ignorable="d"
-        Title="MainWindow"   Height="600" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="MainWindow"   Height="600" Width="800" WindowStyle="None"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
     <Grid Background="#F0EDED">
         <Grid.ColumnDefinitions>
@@ -176,7 +176,7 @@ Margin="0 0 0 30"
         <Grid Grid.Row="1"
 Grid.Column="1"
 Margin="20 10 20 20">
-            <Frame x:Name="FraMain" Background="#FFEAE5E5" NavigationUIVisibility="Hidden" >
+            <Frame x:Name="FraMain" Background="#FFEAE5E5" NavigationUIVisibility="Hidden" Height="502" Width="539" >
             </Frame>
         </Grid>
     </Grid>

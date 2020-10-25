@@ -106,14 +106,15 @@ namespace laba_5.Страницы
         {
             WindowClientApp windowClientApp = new WindowClientApp();
             windowClientApp.ShowDialog();
-           
+            listview_form.ItemsSource = context.Users.ToList();
+
         }
 
         private void Button_Edit_click(object sender, RoutedEventArgs e)
         {
-            if (listview_form.SelectedItem is User User)
+            if (listview_form.SelectedItem is User user)
             {
-                idClient = User.idUser;
+                idClient = user.idUser;
                 WindowEditClient windowEditClient = new WindowEditClient();
                 windowEditClient.ShowDialog();
                 listview_form.ItemsSource = context.Users.ToList();//обновляем listview

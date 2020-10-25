@@ -8,13 +8,14 @@
          Title="WindowClientApp" Height="475" Width="534">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="263*"/>
+            <ColumnDefinition Width="245*"/>
+            <ColumnDefinition Width="18*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="66*"/>
+            <RowDefinition Height="335*"/>
+            <RowDefinition Height="43*"/>
         </Grid.RowDefinitions>
         <TextBlock
 Grid.ColumnSpan="2"
@@ -25,7 +26,7 @@ Foreground="#14285E"
 HorizontalAlignment="Center"
 VerticalAlignment="Center"
 FontSize="18"
-Padding="5"/>
+Padding="5" Height="34" Margin="208,20,190,12" Width="110"/>
         <Button
             x:Name="Edit_button"
 Grid.Row="2"
@@ -33,9 +34,7 @@ FontSize="12"
 FontFamily="Microsoft YaHei Light"
 Foreground="#F0EDED"
 Background="#2C4380"
-BorderBrush="#F0EDED"
-Height="30"
-Width="130" Click="Button_Click_Edit">
+BorderBrush="#F0EDED" Click="Button_Click_Edit" Margin="50,7,83,10">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="2" />
@@ -54,9 +53,7 @@ FontSize="12"
 FontFamily="Microsoft YaHei Light"
 Foreground="#F0EDED"
 Background="#2C4380"
-BorderBrush="#F0EDED"
-Height="30"
-Width="130" Click="Button_Cancel"
+BorderBrush="#F0EDED" Click="Button_Cancel" Margin="67,10,48,7"
 >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -68,14 +65,14 @@ Width="130" Click="Button_Cancel"
                 <TextBlock Text="CANCEL"/>
             </StackPanel>
         </Button>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0,0,0,22">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="52*"/>
+                <RowDefinition Height="52*"/>
+                <RowDefinition Height="52*"/>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="49*"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Vertical">
                 <TextBlock
@@ -86,6 +83,9 @@ FontFamily="Microsoft YaHei Light"
 Padding="15 0 0 5"/>
                 <TextBox Margin="15 0 15 0"
                          x:Name="Tblname"
+                         LostFocus="TBlast_name_lostFocus"
+                         PreviewTextInput="TBlast_name_PreviewTextInput"
+                         
 Height="25"
 VerticalContentAlignment="Center"
 />
@@ -100,6 +100,8 @@ FontFamily="Microsoft YaHei Light"
 Padding="15 0 0 5"/>
                 <ComboBox Margin="15 0 15 0"
                           x:Name="CBrole" IsEditable="True"
+                          LostFocus="CBrole_lostFocus"
+                          PreviewTextInput="TBR_PreviewTextInput"
 Height="25"
 VerticalContentAlignment="Center"
 Background="White"
@@ -118,6 +120,8 @@ FontFamily="Microsoft YaHei Light"
 Padding="15 0 0 5"/>
                 <TextBox Margin="15 0 15 0"
                          x:Name="TbFname"
+                          LostFocus="TBF_name_lostFocus"
+                         PreviewTextInput="TBF_name_PreviewTextInput"
 Height="25"
 VerticalContentAlignment="Center"
 />
@@ -132,7 +136,9 @@ Foreground="Gray"
 FontFamily="Microsoft YaHei Light"
 Padding="15 0 0 5"/>
                 <TextBox Margin="15 0 15 0"
-                         x:Name="Middlename"
+                         x:Name="TBMiddlename"
+                         LostFocus="TBMIddle_name_lostFocus"
+                         PreviewTextInput="TBM_name_PreviewTextInput"
 Height="25"
 VerticalContentAlignment="Center"
 />
@@ -148,6 +154,8 @@ FontFamily="Microsoft YaHei Light"
 Padding="15 0 0 5"/>
                 <TextBox Margin="15 0 15 0"
                          x:Name="TBlogin"
+                         LostFocus="TBlogin_LostFocus"
+                         PreviewTextInput="TBL_name_PreviewTextInput"
 Height="25"
 VerticalContentAlignment="Center"
 />
@@ -163,6 +171,8 @@ FontFamily="Microsoft YaHei Light"
 Padding="15 0 0 5"/>
                 <TextBox Margin="15 0 15 0"
                          x:Name="TBpassword"
+                         LostFocus="TBPassword_LostFocus"
+                         PreviewTextInput="TBP_name_PreviewTextInput"
 Height="25"
 VerticalContentAlignment="Center"
 />
@@ -171,7 +181,7 @@ VerticalContentAlignment="Center"
         <StackPanel
 Grid.Row="1"
 Grid.Column="1"
-VerticalAlignment="Center">
+VerticalAlignment="Center" Height="250" Margin="0,36,0,49" Grid.ColumnSpan="2">
             <Border
 Width="150"
 Height="200"

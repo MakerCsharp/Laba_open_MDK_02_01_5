@@ -17,7 +17,7 @@
             <PropertyRef Name="diServices" />
           </Key>
           <Property Name="diServices" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Services" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="NServices" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="image" Type="varbinary(max)" />
         </EntityType>
@@ -43,6 +43,7 @@
           <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="idRole" Type="int" Nullable="false" />
           <Property Name="Image" Type="varbinary(max)" />
+          <Property Name="diServices" Type="int" />
         </EntityType>
         <Association Name="FK_User_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
@@ -53,6 +54,18 @@
             </Principal>
             <Dependent Role="User">
               <PropertyRef Name="idRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Service">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="diServices" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="diServices" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -99,6 +112,10 @@
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Service" Association="Self.FK_User_Service">
+            <End Role="Service" EntitySet="Service" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
@@ -154,10 +171,14 @@
             <Parameter Name="price_min" Mode="In" Type="Decimal" />
           </FunctionImport>
           <EntitySet Name="Roles" EntityType="Model.Role" />
-          <EntitySet Name="Services" EntityType="Model.Service" />
           <EntitySet Name="Users" EntityType="Model.User" />
           <AssociationSet Name="FK_User_Role" Association="Model.FK_User_Role">
             <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Services" EntityType="Model.Service" />
+          <AssociationSet Name="FK_User_Service" Association="Model.FK_User_Service">
+            <End Role="Service" EntitySet="Services" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
@@ -186,15 +207,6 @@
           <Property Name="NameRole" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Users" Relationship="Model.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
-        <EntityType Name="Service">
-          <Key>
-            <PropertyRef Name="diServices" />
-          </Key>
-          <Property Name="diServices" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Services" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="idUser" />
@@ -208,6 +220,8 @@
           <Property Name="idRole" Type="Int32" Nullable="false" />
           <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Role" Relationship="Model.FK_User_Role" FromRole="User" ToRole="Role" />
+          <Property Name="diServices" Type="Int32" />
+          <NavigationProperty Name="Service" Relationship="Model.FK_User_Service" FromRole="User" ToRole="Service" />
         </EntityType>
         <Association Name="FK_User_Role">
           <End Type="Model.Role" Role="Role" Multiplicity="1" />
@@ -218,6 +232,28 @@
             </Principal>
             <Dependent Role="User">
               <PropertyRef Name="idRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="diServices" />
+          </Key>
+          <Property Name="diServices" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NServices" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_User_Service" FromRole="Service" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_User_Service">
+          <End Type="Model.Service" Role="Service" Multiplicity="0..1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="diServices" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="diServices" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -280,19 +316,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Services">
-            <EntityTypeMapping TypeName="Model.Service">
-              <MappingFragment StoreEntitySet="Service">
-                <ScalarProperty Name="image" ColumnName="image" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Services" ColumnName="Services" />
-                <ScalarProperty Name="diServices" ColumnName="diServices" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Model.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="diServices" ColumnName="diServices" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="idRole" ColumnName="idRole" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -301,6 +328,16 @@
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="Model.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="NServices" ColumnName="NServices" />
+                <ScalarProperty Name="diServices" ColumnName="diServices" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

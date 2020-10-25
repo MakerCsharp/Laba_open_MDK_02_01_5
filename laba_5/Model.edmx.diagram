@@ -7,9 +7,10 @@
       <Diagram DiagramId="2dcc14aa70914dfcabed337c88b3aec6" Name="Diagram1">
         <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="0.75" PointY="1.5" />
-        <EntityTypeShape EntityType="Model.Service" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="Model.FK_User_Role" />
+        <EntityTypeShape EntityType="Model.Service" Width="1.5" PointX="5.375" PointY="0.875" />
+        <AssociationConnector Association="Model.FK_User_Service" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

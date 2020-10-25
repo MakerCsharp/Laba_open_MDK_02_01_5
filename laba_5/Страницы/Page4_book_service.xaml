@@ -92,7 +92,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Row="1" Grid.Column="1">
-                <TextBox x:Name="Login_textbox"  />
+                <TextBox x:Name="Login_textbox" TextChanged="Login_textbox_TextChanged"  />
             </Grid>
 
         </Grid>
@@ -104,9 +104,25 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="1">
-                <ListView/>
-            </Grid>
+            
+                
+                <ListView  Grid.Column="1" x:Name="Listview_Forma4">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Имя" Width="200" DisplayMemberBinding="{Binding FirstName}"/>
+
+                        <GridViewColumn Header="Фамилия " Width="150" DisplayMemberBinding="{Binding LastName}"/>
+
+                        <GridViewColumn Header="Отчество" Width="200" DisplayMemberBinding="{Binding MidleName}"/>
+
+                        <GridViewColumn Header="Login" Width="150" DisplayMemberBinding="{Binding Login}"/>
+
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+                
+           
         </Grid>
 
         <Grid Grid.Row="7" Grid.ColumnSpan="3">
@@ -119,8 +135,10 @@
                 <ColumnDefinition Width="7*"/>
                 <ColumnDefinition Width="171*"/>
                 <ColumnDefinition Width="26*"/>
-                <ColumnDefinition Width="221*"/>
-                <ColumnDefinition Width="114*"/>
+                <ColumnDefinition Width="179*"/>
+                <ColumnDefinition Width="23*"/>
+                <ColumnDefinition Width="99*"/>
+                <ColumnDefinition Width="34*"/>
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Row="1" Grid.Column="1">
@@ -131,8 +149,8 @@
                 <Image Source="/laba_5;component/картинки/search.png" />
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="4">
-                <TextBlock Text="CHOSE DATE" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Grid Grid.Row="1" Grid.Column="5" Height="23" VerticalAlignment="Top" >
+                <TextBlock Text="CHOSE DATE" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Grid>
 
         </Grid>
@@ -145,16 +163,17 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="7*"/>
                 <ColumnDefinition Width="90*"/>
-                <ColumnDefinition Width="355*"/>
-                <ColumnDefinition Width="80*"/>
-                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="286*"/>
+                <ColumnDefinition Width="23*"/>
+                <ColumnDefinition Width="70*"/>
+                <ColumnDefinition Width="63*"/>
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Row="1" Grid.Column="1">
                 <TextBlock Text="Name service" FontSize="9" Foreground="Gray" />
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="3">
+            <Grid Grid.Row="1" Grid.Column="4">
                 <TextBlock Text="Date of service" FontSize="9" Foreground="Gray" />
             </Grid>
 
@@ -173,7 +192,7 @@
                 <ColumnDefinition Width="7"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="1" Grid.Column="1">
-                <TextBox/>
+                <TextBox TextChanged="TextBox_TextChanged" x:Name="Name_Service"/>
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="3">
@@ -198,7 +217,19 @@
                     <ColumnDefinition Width="7*"/>
                     <ColumnDefinition Width="376*"/>
                 </Grid.ColumnDefinitions>
-                <ListView Grid.Column="1"/>
+                
+                <ListView Grid.Column="1" x:Name="listview_Page4_spisop_service">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Услуги" Width="200" DisplayMemberBinding="{Binding Services}"/>
+
+                            <GridViewColumn Header="Цена" Width="150" DisplayMemberBinding="{Binding Price}"/>
+                            
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Width="373">
@@ -207,11 +238,11 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="10*"/>
                     <RowDefinition Height="2*"/>
-                    <RowDefinition Height="16*"/>
-                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="31*"/>
+                    <RowDefinition Height="8"/>
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="3" Grid.Column="1" Margin="0,1,0,0" >

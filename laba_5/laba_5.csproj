@@ -117,11 +117,17 @@
     <Compile Include="vvod_max_min_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Окна\WindowAddService.xaml.cs">
+      <DependentUpon>WindowAddService.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Окна\WindowClientApp.xaml.cs">
       <DependentUpon>WindowClientApp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Окна\WindowEditClient.xaml.cs">
       <DependentUpon>WindowEditClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Окна\WindowEditService.xaml.cs">
+      <DependentUpon>WindowEditService.xaml</DependentUpon>
     </Compile>
     <Compile Include="Окна\WindowHelp.xaml.cs">
       <DependentUpon>WindowHelp.xaml</DependentUpon>
@@ -150,11 +156,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Окна\WindowAddService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Окна\WindowClientApp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Окна\WindowEditClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Окна\WindowEditService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

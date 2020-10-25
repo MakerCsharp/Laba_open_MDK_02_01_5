@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static laba_5.Appdata.Class1;
 
 namespace laba_5.Страницы
 {
@@ -23,6 +24,20 @@ namespace laba_5.Страницы
         public Page4_book_service()
         {
             InitializeComponent();
+            listview_Page4_spisop_service.ItemsSource = context.Services.ToList();
+            Listview_Forma4.ItemsSource = context.Users.ToList();//Listview_Forma4
+        }
+
+        private void Login_textbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var list = context.Users.ToList();
+            Listview_Forma4.ItemsSource = list.Where(i => i.Login.Contains(Login_textbox.Text));
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var list = context.Services.ToList();
+            listview_Page4_spisop_service.ItemsSource = list.Where(i => i.NServices.Contains(Name_Service.Text));
         }
     }
 }

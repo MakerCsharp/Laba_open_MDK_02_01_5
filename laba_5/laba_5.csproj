@@ -275,9 +275,10 @@
     <Resource Include="картинки\expand_arrow_64px.png" />
     <Resource Include="картинки\expand_arrow_black_64px.png" />
     <Resource Include="картинки\double_tick_64px.png" />
-    <Content Include="Моя_бд\Fedinskiy_Nikita_3isp_11_7.sql" />
     <Resource Include="картинки\star_filled_96px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Моя_бд\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

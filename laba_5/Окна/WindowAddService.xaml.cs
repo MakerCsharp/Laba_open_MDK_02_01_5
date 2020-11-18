@@ -37,7 +37,7 @@ namespace laba_5.Окна
             }
             if (pathPhoto != null)
             {
-                context.Services.Add(new Service
+                context.Service.Add(new Service
                 {
                     NServices = TbService.Text,
                     Price = Convert.ToDecimal(TbPrice.Text),
@@ -49,7 +49,7 @@ namespace laba_5.Окна
             }
             else
             {
-                context.Services.Add(new Service
+                context.Service.Add(new Service
                 {
                     NServices = TbService.Text,
                     Price = Convert.ToDecimal(TbPrice.Text),

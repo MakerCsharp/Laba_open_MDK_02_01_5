@@ -14,18 +14,9 @@ namespace laba_5
     
     public partial class Service
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Service()
-        {
-            this.Users = new HashSet<User>();
-        }
-    
-        public int diServices { get; set; }
+        public int idServices { get; set; }
         public string NServices { get; set; }
         public decimal Price { get; set; }
         public byte[] image { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
     }
 }

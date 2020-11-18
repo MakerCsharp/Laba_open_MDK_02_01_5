@@ -27,7 +27,7 @@ namespace laba_5.Окна
         public WindowClientApp()
         {
             InitializeComponent();
-            CBrole.ItemsSource = context.Roles.Select(i => i.NameRole).ToList();
+            CBrole.ItemsSource = context.Role.Select(i => i.NameRole).ToList();
             
         }
 
@@ -56,14 +56,14 @@ namespace laba_5.Окна
             }
               if(pathPhoto!=null)
             {
-                context.Users.Add(new User
+                context.User.Add(new User
                 {
                     LastName = Tblname.Text,
                     FirstName = TbFname.Text,
                     MidleName = Middlename.Text,
                     Login = TBlogin.Text,
                     Password = TBpassword.Text,
-                    idRole = context.Roles.Where(i => i.NameRole == CBrole.SelectedItem.ToString()).Select(i => i.idRole).FirstOrDefault(),
+                    idRole = context.Role.Where(i => i.NameRole == CBrole.SelectedItem.ToString()).Select(i => i.idRole).FirstOrDefault(),
                     Image = File.ReadAllBytes(pathPhoto)
                 });
                 context.SaveChanges();
@@ -73,14 +73,14 @@ namespace laba_5.Окна
             }
             else 
             {
-                context.Users.Add(new User
+                context.User.Add(new User
                 {
                     LastName = Tblname.Text,
                     FirstName = TbFname.Text,
                     MidleName = Middlename.Text,
                     Login = TBlogin.Text,
                     Password = TBpassword.Text,
-                    idRole = context.Roles.Where(i => i.NameRole == CBrole.SelectedItem.ToString()).Select(i => i.idRole).FirstOrDefault()
+                    idRole = context.Role.Where(i => i.NameRole == CBrole.SelectedItem.ToString()).Select(i => i.idRole).FirstOrDefault()
                    
                 }); 
                 context.SaveChanges();

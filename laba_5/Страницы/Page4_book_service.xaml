@@ -221,7 +221,7 @@
                 <ListView Grid.Column="1" x:Name="listview_Page4_spisop_service">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Услуги" Width="200" DisplayMemberBinding="{Binding Services}"/>
+                            <GridViewColumn Header="Услуги" Width="200" DisplayMemberBinding="{Binding NServices}"/>
 
                             <GridViewColumn Header="Цена" Width="150" DisplayMemberBinding="{Binding Price}"/>
                             

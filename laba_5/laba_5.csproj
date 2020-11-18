@@ -108,13 +108,10 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vvod_max_min_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Окна\WindowAddService.xaml.cs">
@@ -260,6 +257,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="картинки\save_64px.png" />
+    <Resource Include="картинки\cancel_64px.png" />
+    <Resource Include="картинки\expand_arrow_64px.png" />
+    <Resource Include="картинки\expand_arrow_black_64px.png" />
+    <Resource Include="картинки\double_tick_64px.png" />
+    <Resource Include="картинки\star_filled_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Моя_бд\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -270,15 +278,6 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Resource Include="картинки\save_64px.png" />
-    <Resource Include="картинки\cancel_64px.png" />
-    <Resource Include="картинки\expand_arrow_64px.png" />
-    <Resource Include="картинки\expand_arrow_black_64px.png" />
-    <Resource Include="картинки\double_tick_64px.png" />
-    <Resource Include="картинки\star_filled_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Моя_бд\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

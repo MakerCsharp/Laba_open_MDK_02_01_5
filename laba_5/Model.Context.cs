@@ -15,10 +15,10 @@ namespace laba_5
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Entities : DbContext
+    public partial class Database_for_15_labaEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public Database_for_15_labaEntities()
+            : base("name=Database_for_15_labaEntities")
         {
         }
     
@@ -27,10 +27,10 @@ namespace laba_5
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Service> Services { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<User> User { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -135,7 +135,7 @@ namespace laba_5
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual ObjectResult<vvod_max_min_Result> vvod_max_min(Nullable<decimal> price_max, string name, Nullable<decimal> price_min)
+        public virtual int vvod_max_min(Nullable<decimal> price_max, string name, Nullable<decimal> price_min)
         {
             var price_maxParameter = price_max.HasValue ?
                 new ObjectParameter("price_max", price_max) :
@@ -149,7 +149,7 @@ namespace laba_5
                 new ObjectParameter("price_min", price_min) :
                 new ObjectParameter("price_min", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<vvod_max_min_Result>("vvod_max_min", price_maxParameter, nameParameter, price_minParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("vvod_max_min", price_maxParameter, nameParameter, price_minParameter);
         }
     }
 }

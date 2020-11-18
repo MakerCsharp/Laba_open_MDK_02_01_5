@@ -24,19 +24,19 @@ namespace laba_5.Страницы
         public Page4_book_service()
         {
             InitializeComponent();
-            listview_Page4_spisop_service.ItemsSource = context.Services.ToList();
-            Listview_Forma4.ItemsSource = context.Users.ToList();//Listview_Forma4
+            listview_Page4_spisop_service.ItemsSource = context.Service.ToList();
+            Listview_Forma4.ItemsSource = context.User.ToList();//Listview_Forma4
         }
 
         private void Login_textbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var list = context.Users.ToList();
+            var list = context.User.ToList();
             Listview_Forma4.ItemsSource = list.Where(i => i.Login.Contains(Login_textbox.Text));
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var list = context.Services.ToList();
+            var list = context.Service.ToList();
             listview_Page4_spisop_service.ItemsSource = list.Where(i => i.NServices.Contains(Name_Service.Text));
         }
     }

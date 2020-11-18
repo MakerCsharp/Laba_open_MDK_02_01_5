@@ -25,10 +25,10 @@ namespace laba_5.Страницы
         public Page2()
         {
             InitializeComponent();
-            listview_form.ItemsSource = context.Users.ToList();
+            listview_form.ItemsSource = context.User.ToList();
 
 
-            List<Role> roles = context.Roles.ToList();
+            List<Role> roles = context.Role.ToList();
             
             roles.Insert(0, new Role() {  NameRole= "Все роли" });
             Combobox_Role.ItemsSource = roles;
@@ -42,7 +42,7 @@ namespace laba_5.Страницы
         {
             //Filter();
             //1 часть работы 
-            var list = context.Users.ToList();
+            var list = context.User.ToList();
             listview_form.ItemsSource = list.Where(i => i.LastName.ToUpper().Contains(Textbox_Last_Name.Text.ToUpper()));
 
 
@@ -52,7 +52,7 @@ namespace laba_5.Страницы
         {
             //Filter();
             //1 часть работы 
-            var list = context.Users.ToList();
+            var list = context.User.ToList();
             //Ниже код с ошибкой
              listview_form.ItemsSource = list.Where(i => i.FirstName.Contains(Textbox_First_Name.Text) );
             //Перевод в верхний регистр 
@@ -64,7 +64,7 @@ namespace laba_5.Страницы
             //Filter();
 
             //1 часть работы 
-            var list = context.Users.ToList();
+            var list = context.User.ToList();
             listview_form.ItemsSource = list.Where(i => i.Login.ToLower().Contains(Textbox_Login.Text));
 
         }//Перевод в верхний регистр 
@@ -73,7 +73,7 @@ namespace laba_5.Страницы
         {
             //Filter();
             //1 часть работы 
-            var list = context.Users.ToList();
+            var list = context.User.ToList();
             if (Combobox_Role.SelectedIndex == 0)
             {
                 listview_form.ItemsSource = list;
@@ -106,7 +106,7 @@ namespace laba_5.Страницы
         {
             WindowClientApp windowClientApp = new WindowClientApp();
             windowClientApp.ShowDialog();
-            listview_form.ItemsSource = context.Users.ToList();
+            listview_form.ItemsSource = context.User.ToList();
 
         }
 
@@ -117,7 +117,7 @@ namespace laba_5.Страницы
                 idClient = user.idUser;
                 WindowEditClient windowEditClient = new WindowEditClient();
                 windowEditClient.ShowDialog();
-                listview_form.ItemsSource = context.Users.ToList();//обновляем listview
+                listview_form.ItemsSource = context.User.ToList();//обновляем listview
 
              }
             else
@@ -137,10 +137,10 @@ namespace laba_5.Страницы
                 {
                     if (listview_form.SelectedItem is User user)
                     {
-                        context.Users.Remove(context.Users.Where(i => i.idUser == user.idUser).FirstOrDefault());
+                        context.User.Remove(context.User.Where(i => i.idUser == user.idUser).FirstOrDefault());
                         context.SaveChanges();
                         MessageBox.Show("Запись успешно удалена ", "Удаление клиента", MessageBoxButton.OK, MessageBoxImage.Information);
-                        listview_form.ItemsSource = context.Users.ToList();
+                        listview_form.ItemsSource = context.User.ToList();
 
 
 

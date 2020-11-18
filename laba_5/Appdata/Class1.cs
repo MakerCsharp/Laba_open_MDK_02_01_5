@@ -8,7 +8,7 @@ namespace laba_5.Appdata
 {
     class Class1
     {
-      public static Entities context = new Entities();
+      public static Database_for_15_labaEntities context = new Database_for_15_labaEntities();
 
         public static int idClient;//для сохранения id выбранного пользоватедля редактирования клиента 
 

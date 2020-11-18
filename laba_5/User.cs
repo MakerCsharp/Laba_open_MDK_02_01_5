@@ -25,6 +25,5 @@ namespace laba_5
         public Nullable<int> diServices { get; set; }
     
         public virtual Role Role { get; set; }
-        public virtual Service Service { get; set; }
     }
 }

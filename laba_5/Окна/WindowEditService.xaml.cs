@@ -26,7 +26,7 @@ namespace laba_5.Окна
         public WindowEditService()
         {
             InitializeComponent();
-            var service = context.Services.Where(i => i.diServices == idServices).FirstOrDefault();
+            var service = context.Service.Where(i => i.idServices == idServices).FirstOrDefault();
             TbName_Service.Text = service.NServices;
             TbPrice.Text = Convert.ToString(service.Price);
         }
@@ -43,7 +43,7 @@ namespace laba_5.Окна
 
             else
             {
-                var service = context.Services.Where(i => i.diServices == idServices).FirstOrDefault();
+                var service = context.Service.Where(i => i.idServices == idServices).FirstOrDefault();
                 service.NServices = TbName_Service.Text;
                 service.Price = Convert.ToDecimal(TbPrice.Text);
                 service.image = (pathPhoto.Length > 0) ? File.ReadAllBytes(pathPhoto) : null;

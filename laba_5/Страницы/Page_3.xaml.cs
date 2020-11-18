@@ -34,7 +34,7 @@ namespace laba_5.Страницы
         public Page_3()
         {
             InitializeComponent();
-            List123.ItemsSource = context.Services.ToList();
+            List123.ItemsSource = context.Service.ToList();
 
         }
         private void Name_srvices(object sender, TextChangedEventArgs e)
@@ -119,10 +119,10 @@ namespace laba_5.Страницы
                 {
                     if (List123.SelectedItem is Service service)
                     {
-                        context.Services.Remove(context.Services.Where(i => i.diServices == service.diServices).FirstOrDefault());
+                        context.Service.Remove(context.Service.Where(i => i.idServices == service.idServices).FirstOrDefault());
                         context.SaveChanges();
                         MessageBox.Show("Запись успешно удалена ", "Удаление услуги", MessageBoxButton.OK, MessageBoxImage.Information);
-                        List123.ItemsSource = context.Services.ToList();
+                        List123.ItemsSource = context.Service.ToList();
                     }
                     else
                     {
@@ -134,7 +134,7 @@ namespace laba_5.Страницы
 
         public void Filter_2()
         {
-            var list = context.Services.ToList();
+            var list = context.Service.ToList();
             try
             {
                 max_a = (Convert.ToDecimal(TextBox_MaxPrice.Text));
@@ -287,17 +287,17 @@ namespace laba_5.Страницы
         {
             WindowAddService windowAdd = new WindowAddService();
             windowAdd.ShowDialog();
-            List123.ItemsSource = context.Services.ToList();
+            List123.ItemsSource = context.Service.ToList();
         }
 
         private void Edit_clikc(object sender, RoutedEventArgs e)
         {
             if (List123.SelectedItem is Service service)
             {
-                idServices = service.diServices;
+                idServices = service.idServices;
                 WindowEditService windowEdit = new WindowEditService();
                 windowEdit.ShowDialog();
-                List123.ItemsSource = context.Services.ToList();
+                List123.ItemsSource = context.Service.ToList();
 
             }
             else
